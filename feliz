@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumple Anita</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    
+    
+    
+    <style>
+    /* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7; /* Fondo similar al juego del dinosaurio */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+/* Estilo pixelado */
+.pixel-text .word, .pixel-text .name, .pixel-text .heart {
+    display: block;
+    font-size: 4em; /* Tamaño grande para efecto pixelado */
+    color: #4a4a4a; /* Color gris similar al del dinosaurio */
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px; /* Espaciado entre letras */
+    margin: 10px;
+    text-shadow: 
+        1px 1px 0px #333,
+        2px 2px 0px #333,
+        3px 3px 0px #333; /* Efecto de sombra pixelada */
+}
+
+/* Animación de salto */
+.pixel-text .word {
+    animation: jump 0.5s ease-in-out infinite;
+}
+
+.pixel-text .name {
+    animation: jump 0.5s ease-in-out 0.2s infinite;
+}
+
+.pixel-text .heart {
+    animation: jump 0.5s ease-in-out 0.4s infinite;
+}
+
+/* Animación de salto */
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Estilo y animación para el corazón en movimiento */
+.moving-heart {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    font-size: 3em; /* Tamaño del corazón */
+    animation: moveHeart 4s ease-in-out infinite;
+}
+
+/* Animación de movimiento lateral */
+@keyframes moveHeart {
+    0% {
+        left: 0;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        left: 90%; /* Se mueve a la derecha del contenedor */
+        transform: translateY(-10px) scale(1.1); /* Pequeño rebote y escala */
+    }
+    100% {
+        left: 0;
+        transform: translateY(0) scale(1); /* Regresa a la posición inicial */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pixel-text">
+            <span class="word">Feliz Cumple</span>
+            <span class="name">Anita</span>
+            <span class="heart">Te <3</span>
+        </div>
+        <div class="moving-heart">❤️</div> <!-- Corazón animado que se mueve -->
+    </div>
+</body>
+</html>
+
+
